@@ -1,0 +1,12 @@
+공유 폴더 아이피: 70.12.50.130
+
+이클립스 단축키
+ctrl + space = 코드 어시스턴스
+ctrl + f11 = 빠른 실행
+ctrl + shift + f = 코드 정렬
+ctrl + shift + o = 미등록 import 추가 or 쓰지않는 import 삭제
+ctrl + shift + / = 범위 주석
+ctrl + shift + \ = 범위 주석 해제
+ctrl + / = 주석, 주석 해제
+alt + shift + s = Getters and Setters, toString, 생성자
+alt + shift + t = Extract Interface 
