@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<context:component-scan base-package="polymorphism3"/>
+	
+	<!-- 실제로 사용할 Speaker 하나만 등록한다. -->
+	<bean class="polymorphism3.SonySpeaker"></bean>
+	
+	<!-- 실제로 사용할 TV 하나만 등록한다. -->
+	<bean class="polymorphism3.LgTV"></bean>
+	
+	<!-- 	
+	<bean id="tv" class="polymorphism3.GoogleTV">
+		<constructor-arg ref="apple"></constructor-arg>
+		<constructor-arg value="1500000"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="collection" class="polymorphism3.CollectionBean">
+		<property name="nameList">
+			<props>
+				<prop key="둘리">서울</prop>
+				<prop key="도우너">광주</prop>
+				<prop key="또치">대구</prop>				
+			</props>
+		</property>
+	</bean>
+	 
+	<bean id="tv" class="polymorphism3.SamsungTV">
+		<property name="speaker" ref="sony"></property>
+		<property name="price" value="1200000"></property>
+	</bean>
+	 
+	<bean id="sony" class="polymorphism3.SonySpeaker"></bean>
+	
+	<bean id="apple" class="polymorphism3.AppleSpeaker"></bean>
+	-->
+	
+</beans>
+
+
+
+
+
+
+
+

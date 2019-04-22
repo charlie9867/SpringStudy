@@ -10,3 +10,14 @@ ctrl + shift + \ = 범위 주석 해제
 ctrl + / = 주석, 주석 해제
 alt + shift + s = Getters and Setters, toString, 생성자
 alt + shift + t = Extract Interface 
+
+
+Spring Container의 종류
+ - BeanFactory
+   프로젝트에서 잘 사용하지 않음
+ - ApplicationContext
+   BeanFactory의 모든 기능을 제공하며 다양한 구현 클래스 제공
+
+   * XmlWebApplicationContext: 웹 기반의 Spring 어플리케이션을 개발할 때 사용
+   * FileSystemXmlApplicationContext: 
+   * ClassPathXmlApplicationContext: 
