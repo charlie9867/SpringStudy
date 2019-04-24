@@ -16,11 +16,12 @@ public class BoardServiceClient {
 		
 		// 3. 메소드 테스트
 		BoardVO vo = new BoardVO();
-		vo.setSeq(10);
+		vo.setSeq(100);
 		vo.setTitle("테스트 제목");
 		vo.setWriter("테스터");
 		vo.setContent("테스트 내용..........");
-		boardService.insertBoard(vo);
+		//boardService.insertBoard(vo);
+		
 
 		List<BoardVO> boardList = boardService.getBoardList(vo);
 		for (BoardVO board : boardList) {
