@@ -68,6 +68,7 @@ JSTL(JSP Standard Tag Library)이란?
  - JSP파일에서 if, for, switch 등과 같은 자바 코드를 대체하는 표준 태그
 
 
-Servelt Container는 tomcat이 구동
+Servelt Container는 tomcat이 web.xml을 읽어 구동
+
 
 
