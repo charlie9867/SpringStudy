@@ -2,9 +2,13 @@ package com.multicampus.biz.board;
 
 import java.sql.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 import org.springframework.web.multipart.MultipartFile;
 
 // 1. VO(Value Object == Data Transfer Object) Å¬·¡½º
+@XmlAccessorType(XmlAccessType.FIELD)
 public class BoardVO {
 	private int seq;
 	private String title;

@@ -72,3 +72,5 @@ Servelt Container는 tomcat이 web.xml을 읽어 구동
 
 
 
+OXM(Object XML Mapping)
+JAVA 객체를 XML로 전달해주는 모듈
