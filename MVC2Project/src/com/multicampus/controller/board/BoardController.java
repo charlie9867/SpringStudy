@@ -1,21 +1,44 @@
 package com.multicampus.controller.board;
 
 import java.io.File;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.multicampus.biz.board.BoardListVO;
 import com.multicampus.biz.board.BoardService;
 import com.multicampus.biz.board.BoardVO;
 
 @Controller
 public class BoardController {
 	@Autowired
-	private BoardService boardService;	
+	private BoardService boardService;
+	
+    // XML로 값 리턴하기
+	@RequestMapping("/transferXML.do")
+	@ResponseBody
+	public BoardListVO transfer(BoardVO vo, BoardListVO listVO) {
+		vo.setSearchCondition("TITLE");
+		vo.setSearchKeyword("");
+		List<BoardVO> boardList = boardService.getBoardList(vo);
+		listVO.setBoardList(boardList);
+		return listVO;
+	}
+	
+	// JSON으로 값 리턴하기
+	@RequestMapping("/transferJSON.do")
+	@ResponseBody
+	public List<BoardVO> transfer(BoardVO vo) {
+		vo.setSearchCondition("TITLE");
+		vo.setSearchKeyword("");
+		return boardService.getBoardList(vo);
+	}
 	
 	@RequestMapping(value="/insertBoard.do", method=RequestMethod.GET)
 	public String insertBoardView() throws Exception {

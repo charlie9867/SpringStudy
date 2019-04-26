@@ -12,8 +12,8 @@
 	<context:component-scan base-package="com.multicampus.biz"/>
 	
 	<!-- 실제로 사용할 DAO 하나만 등록 -->
-	<bean class="com.multicampus.biz.board.BoardDAOSpring"></bean>
-	<bean class="com.multicampus.biz.user.UserDAOSpring"></bean>
+	<bean class="com.multicampus.biz.board.BoardDAOMybatis"></bean>
+	<bean class="com.multicampus.biz.user.UserDAOIbatis"></bean>
 
 	<aop:aspectj-autoproxy/>
 	
@@ -52,6 +52,25 @@
 		             advice-ref="txAdvice"/>
 	</aop:config>
 	
+	<!-- Spring과 iBatis 연동 설정 -->
+	<bean id="factoryBean" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:ibatis-config.xml"></property>
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="factoryBean"></property>
+	</bean>
+	
+	<!-- Spring과 MyBatis 연동 설정 -->
+	<bean id="factoryBean2" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="factoryBean2"></constructor-arg>
+	</bean>
 
 	<!-- 횡단관점에 해당하는 Advice 클래스 등록 
 	<bean id="log"            class="com.multicampus.biz.common.LogAdvice"></bean>

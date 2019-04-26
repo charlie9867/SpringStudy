@@ -1,3 +1,4 @@
+강사님 EMAIL: gurum222@daum.net
 공유 폴더 아이피: 70.12.50.130
 
 이클립스 단축키
@@ -74,3 +75,20 @@ Servelt Container는 tomcat이 web.xml을 읽어 구동
 
 OXM(Object XML Mapping)
 JAVA 객체를 XML로 전달해주는 모듈
+
+
+
+iBatis Framework
+
+
+
+
+SQL 문 사용할때 < > 등의 기호를 읽을 수없다
+< = &lt;
+> = &gt; 
+위와같이 표현 가능하며 SQL문을 CDATA로 감싸서 평범하게 사용가능
+EX)
+select * from board where seq %gt;= 19;
+<![CDATA[
+select * from board where seq >= 19;
+]]>
